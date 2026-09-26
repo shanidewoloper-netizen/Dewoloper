@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PRO PREDICTION CHANNEL</title>
+
+  <!-- =========================
+       META PIXEL
+       ========================= -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '1854807695678914');
+  fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1854807695678914&ev=PageView&noscript=1"
+    />
+  </noscript>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          #3b0000 0%,
+          #130000 25%,
+          #050505 55%,
+          #000000 100%
+        );
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          rgba(255,0,0,0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,0,0,0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 35px 35px;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      background: rgba(255,0,0,0.08);
+      filter: blur(100px);
+      border-radius: 50%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      padding: 20px 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      position: relative;
+      background: rgba(4,4,4,0.96);
+      border: 1px solid rgba(255,0,0,0.7);
+      border-radius: 24px;
+      padding: 28px 20px 30px;
+      text-align: center;
+      overflow: hidden;
+
+      box-shadow:
+        0 0 15px rgba(255,0,0,0.35),
+        0 0 60px rgba(255,0,0,0.10);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 3px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          #ff0000,
+          #ffffff,
+          #ff0000,
+          transparent
+        );
+
+      animation: scan 2.5s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        left: -100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* LOGO */
+    .logo-box {
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 20px;
+
+      border-radius: 50%;
+      overflow: hidden;
+
+      border: 3px solid #ff1010;
+
+      box-shadow:
+        0 0 15px #ff0000,
+        0 0 35px rgba(255,0,0,0.55),
+        inset 0 0 20px rgba(255,0,0,0.3);
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* STATUS */
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 15px;
+
+      border: 1px solid #292929;
+      border-radius: 50px;
+
+      background: #0b0b0b;
+
+      color: #d5d5d5;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+
+      margin-bottom: 17px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+
+      background: #00ff55;
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 5px #00ff55,
+        0 0 12px #00ff55;
+
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%,100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    /* TITLE */
+    h1 {
+      font-size: 32px;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: 2px;
+
+      margin-bottom: 12px;
+
+      color: #fff;
+
+      text-shadow:
+        0 0 8px rgba(255,0,0,0.55);
+    }
+
+    h1 span {
+      color: #ff1515;
+    }
+
+    .subtitle {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.6;
+
+      max-width: 400px;
+      margin: 0 auto 24px;
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+
+      margin-bottom: 25px;
+    }
+
+    .feature {
+      background:
+        linear-gradient(
+          145deg,
+          #111,
+          #070707
+        );
+
+      border: 1px solid #252525;
+      border-radius: 13px;
+
+      padding: 14px 8px;
+
+      color: #d8d8d8;
+      font-size: 12px;
+
+      transition: 0.2s;
+    }
+
+    .feature:hover {
+      border-color: #ff2020;
+      box-shadow: 0 0 12px rgba(255,0,0,0.2);
+    }
+
+    .feature strong {
+      display: block;
+
+      color: #ff2020;
+
+      font-size: 20px;
+
+      margin-bottom: 5px;
+
+      text-shadow:
+        0 0 8px rgba(255,0,0,0.6);
+    }
+
+    /* TELEGRAM BUTTON */
+    .telegram-btn {
+      width: 100%;
+
+      border: 1px solid #ff3636;
+      border-radius: 14px;
+
+      padding: 17px 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff1515,
+          #b40000
+        );
+
+      color: #fff;
+
+      font-size: 17px;
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 0 15px rgba(255,0,0,0.5),
+        inset 0 0 12px rgba(255,255,255,0.08);
+
+      transition: all 0.2s ease;
+    }
+
+    .telegram-btn:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 0 25px rgba(255,0,0,0.8),
+        0 0 50px rgba(255,0,0,0.25);
+    }
+
+    .telegram-btn:active {
+      transform: scale(0.97);
+    }
+
+    .small-text {
+      margin-top: 14px;
+
+      color: #666;
+
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    /* TERMINAL */
+    .terminal {
+      margin-top: 24px;
+
+      padding: 14px;
+
+      text-align: left;
+
+      background: #030303;
+
+      border: 1px solid #202020;
+      border-radius: 11px;
+
+      font-family: monospace;
+      font-size: 11px;
+      line-height: 1.8;
+
+      box-shadow:
+        inset 0 0 15px rgba(255,0,0,0.04);
+    }
+
+    .terminal .red {
+      color: #ff2020;
+    }
+
+    .terminal .green {
+      color: #00dd57;
+    }
+
+    .terminal .gray {
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 20px;
+
+      color: #444;
+
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 420px) {
+
+      .container {
+        padding: 12px 9px;
+      }
+
+      .card {
+        padding: 23px 15px 25px;
+        border-radius: 20px;
+      }
+
+      .logo-box {
+        width: 175px;
+        height: 175px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .subtitle {
+        font-size: 13px;
+      }
+
+      .telegram-btn {
+        font-size: 16px;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <!-- LOGO -->
+      <div class="logo-box">
+        <img
+          src="logo.jpg"
+          alt="PRO PREDICTION CHANNEL"
+        >
+      </div>
+
+      <!-- STATUS -->
+      <div class="status">
+        <span class="dot"></span>
+        CHANNEL ONLINE
+      </div>
+
+      <!-- TITLE -->
+      <h1>
+        PRO <span>PREDICTION</span>
+      </h1>
+
+      <p class="subtitle">
+        Join our Telegram channel and stay connected
+        with the latest updates.
+      </p>
+
+      <!-- FEATURES -->
+      <div class="features">
+
+        <div class="feature">
+          <strong>⚡</strong>
+          Fast Updates
+        </div>
+
+        <div class="feature">
+          <strong>🔥</strong>
+          Daily Updates
+        </div>
+
+        <div class="feature">
+          <strong>🚀</strong>
+          Telegram
+        </div>
+
+        <div class="feature">
+          <strong>🔒</strong>
+          Private Channel
+        </div>
+
+      </div>
+
+      <!-- TELEGRAM BUTTON -->
+      <button
+        id="telegramButton"
+        class="telegram-btn"
+        type="button"
+      >
+        🚀 JOIN TELEGRAM
+      </button>
+
+      <p class="small-text">
+        Click the button above to continue to our
+        Telegram channel.
+      </p>
+
+      <!-- TERMINAL -->
+      <div class="terminal">
+
+        <div>
+          <span class="red">root@channel:</span>~$
+          connection_status
+        </div>
+
+        <div>
+          <span class="green">✓</span>
+          CHANNEL ONLINE
+        </div>
+
+        <div>
+          <span class="green">✓</span>
+          SECURE CONNECTION
+        </div>
+
+        <div>
+          <span class="green">✓</span>
+          ACCESS READY
+        </div>
+
+        <div>
+          <span class="gray">
+            system://ready
+          </span>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        PRO PREDICTION • OFFICIAL CHANNEL
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TELEGRAM CLICK TRACKING
+       ========================= -->
+
+  <script>
+
+    const telegramButton =
+      document.getElementById("telegramButton");
+
+    telegramButton.addEventListener(
+      "click",
+      function () {
+
+        /* Meta Custom Event */
+
+        if (typeof fbq === "function") {
+
+          fbq(
+            "trackCustom",
+            "TelegramJoinClick",
+            {
+              button_name: "JOIN TELEGRAM",
+              destination: "Telegram"
+            }
+          );
+
+        }
+
+        /* Open Telegram */
+
+        setTimeout(
+          function () {
+
+            window.location.href =
+              "https://t.me/+QBfnw-eyp3UyOGU1";
+
+          },
+          500
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
